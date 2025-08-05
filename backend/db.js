@@ -127,10 +127,11 @@ class Database {
   async getResponseWithAnswers(responseId) {
     const response = await this.query('SELECT * FROM user_responses WHERE id = ?', [responseId]);
     const answers = await this.query(`
-      SELECT a.*, q.area, q.activity, q.criteria 
+      SELECT a.*, q.area, q.activity, q.criteria, q.sequence_order
       FROM answers a 
       JOIN questions q ON a.question_id = q.id 
       WHERE a.response_id = ?
+      ORDER BY q.sequence_order ASC, q.id ASC
     `, [responseId]);
     
     return {
