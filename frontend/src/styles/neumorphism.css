@@ -92,6 +92,20 @@
     -6px -6px 12px #91f125;
 }
 
+.neumo-button.secondary {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  color: var(--neumo-text);
+  box-shadow: 
+    6px 6px 12px var(--neumo-dark),
+    -6px -6px 12px var(--neumo-light);
+}
+
+.neumo-button.secondary:hover {
+  box-shadow: 
+    8px 8px 16px var(--neumo-dark),
+    -8px -8px 16px var(--neumo-light);
+}
+
 .neumo-input {
   background: var(--neumo-bg);
   border: none;
@@ -313,20 +327,49 @@
     border-radius: 16px;
     padding: 1rem;
     box-shadow: 
-      6px 6px 12px var(--neumo-dark),
-      -6px -6px 12px var(--neumo-light);
+      4px 4px 8px var(--neumo-dark),
+      -4px -4px 8px var(--neumo-light);
   }
   
   .neumo-button {
     border-radius: 12px;
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1.5rem;
+    min-height: 48px; /* Better touch target */
   }
   
   .neumo-input,
   .neumo-select,
   .neumo-textarea {
     border-radius: 12px;
-    padding: 0.6rem 0.8rem;
+    padding: 0.8rem 1rem;
+    min-height: 48px; /* Better touch target */
+  }
+
+  /* Reduce inner shadows on mobile for better contrast */
+  .neumo-input,
+  .neumo-select,
+  .neumo-textarea {
+    box-shadow: 
+      inset 3px 3px 6px var(--neumo-dark),
+      inset -3px -3px 6px var(--neumo-light);
+  }
+
+  .neumo-input:focus,
+  .neumo-select:focus,
+  .neumo-textarea:focus {
+    box-shadow: 
+      inset 2px 2px 4px var(--neumo-dark),
+      inset -2px -2px 4px var(--neumo-light);
+  }
+
+  /* Larger text for better readability */
+  .neumo-button {
+    font-size: 16px;
+  }
+
+  .neumo-input,
+  .neumo-select {
+    font-size: 16px;
   }
 }
 
