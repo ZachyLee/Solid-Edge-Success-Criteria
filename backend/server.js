@@ -39,17 +39,10 @@ app.get('/api/health', (req, res) => {
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
-  const frontendPath = path.join(__dirname, '../frontend/dist');
-  console.log('Frontend path:', frontendPath);
-  console.log('Frontend exists:', require('fs').existsSync(frontendPath));
-  
-  app.use(express.static(frontendPath));
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
   
   app.get('*', (req, res) => {
-    const indexPath = path.join(frontendPath, 'index.html');
-    console.log('Serving index.html from:', indexPath);
-    console.log('Index.html exists:', require('fs').existsSync(indexPath));
-    res.sendFile(indexPath);
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
   });
 }
 
