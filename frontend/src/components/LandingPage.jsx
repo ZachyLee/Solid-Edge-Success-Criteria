@@ -108,6 +108,10 @@ const LandingPage = () => {
               }
             </span>
           </button>
+          {/* Temporary test indicator */}
+          <div className="mt-2 text-center text-xs text-blue-600 font-semibold">
+            🆕 Latest Version Loaded
+          </div>
         </div>
 
         {/* Case Study Content */}
