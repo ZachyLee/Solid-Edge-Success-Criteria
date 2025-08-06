@@ -43,6 +43,12 @@ const LandingPage = () => {
               : 'Evaluasi implementasi Solid Edge Anda dengan alat penilaian komprehensif kami.'
             }
           </p>
+          {/* Force refresh indicator */}
+          <div className="mt-4 p-2 bg-red-100 border border-red-300 rounded-lg">
+            <p className="text-xs text-red-700 font-bold">
+              🔄 FORCE REFRESH TEST - If you see this, latest code is deployed
+            </p>
+          </div>
         </div>
 
         {/* Main Form Section */}
